@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Typical Regression Table}
+\label{table.regtable}
+\begin{tabular}{l*{3}{c}}
+\hline
+\hline
+ & \multicolumn{3}{c}{Dependent Variable : Hourly Wage}\\
+\hline
+Years of education&       0.692***&       0.661***&       0.612***\\
+            &     (0.000)   &     (0.000)   &     (0.000)   \\
+Potential experience (years)&      -0.300   &      -0.343   &      -0.407   \\
+            &     (0.277)   &     (0.207)   &     (0.128)   \\
+Potential experience square&       0.005   &       0.005   &       0.007   \\
+            &     (0.339)   &     (0.272)   &     (0.168)   \\
+\\
+\hline
+Demo. Control&          No   &         Yes   &         Yes   \\
+Geo. Control&          No   &          No   &         Yes   \\
+R-squared   &       0.107   &       0.113   &       0.135   \\
+N           &       2,244   &       2,244   &       2,244   \\
+\hline\hline
+\multicolumn{4}{l}{Note : We computed heteroscedasticity robust standard errors.} \\
+\multicolumn{4}{l}{* p$<$0.10, ** p$<$0.05, *** p$<$0.01}\\
+\end{tabular}
+\end{table}
