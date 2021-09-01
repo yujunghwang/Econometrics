@@ -1,2 +1,2 @@
 # Econometrics
-Sample STATA codes for teaching
+Example STATA codes for teaching
