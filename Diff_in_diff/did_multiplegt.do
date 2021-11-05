@@ -53,17 +53,17 @@ replace outcome = outcome + `delta'*(time-ttime+1) if treat==1
 tab group ttime
 
 
-
 *********************
 * run diff-in-diff in a robust way
 did_multiplegt outcome group time treat, robust_dynamic dynamic(4) placebo(4) jointtestplacebo breps(100) cluster(group) covariances seed(210828) longdiff_placebo
+
 
 
 **********************************************************
 * compare this to usual event study design command
 gen timediff=time-ttime if treatgp==1
 
-eventdd outcome treatgp i.time i.group, timevar(timediff) method(ols, cluster(group)) level(95) baseline(-1) graph_op(xtitle("years relative to treatment year") ytitle("outcome")) 
+eventdd outcome i.time i.group, timevar(timediff) method(ols, cluster(group)) level(95) baseline(-1) graph_op(xtitle("years relative to treatment year") ytitle("outcome")) 
 
 
 eventdd outcome, timevar(timediff) method(hdfe, absorb(time group) cluster(group)) level(95) baseline(-1) graph_op(xtitle("years relative to treatment year") ytitle("outcome")) 

@@ -2,11 +2,13 @@
 
 use twfe.dta, clear
 
+* to use eventdd command,
 * for control group, timediff must be missing
 gen timediff = time - 6 if treatgp==1 
 
 * use STATA command eventdd
-eventdd outcome treatgp i.time i.group, timevar(timediff) method(ols, cluster(group)) level(95) baseline(-1) graph_op(xtitle("years relative to treatment year") ytitle("outcome")) 
+eventdd outcome i.time i.group, timevar(timediff) method(ols, cluster(group)) level(95) baseline(-1) graph_op(xtitle("years relative to treatment year") ytitle("outcome")) 
+
 
 * the above command used ols method
 * you can also use reghdfe 

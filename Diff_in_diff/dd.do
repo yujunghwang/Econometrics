@@ -46,6 +46,6 @@ gen post  = time==2
 
 * ## means interaction
 * i. means categorical variable
-
-reg outcome treat post i.treat##i.post, vce(cluster group)
+* ## controls for i.treat and i.post
+reg outcome i.treat##i.post, vce(cluster group)
 

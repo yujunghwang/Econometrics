@@ -70,7 +70,8 @@ restore
 * i. means categorical variable
 
 * dd regression
-reg outcome treatgp post i.treatgp##i.post, vce(cluster group)
+* ## controls for i.treatgp and i.post
+reg outcome i.treatgp##i.post, vce(cluster group)
 
 * twfe
 reg outcome treat i.group i.time, vce(cluster group)
